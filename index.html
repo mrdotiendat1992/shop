@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFT Card Shop</title>
+
+    <!-- TODO: Replace the following asset with our logo -->
+    <link rel="shortcut icon" href="assets/images/logo/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/aos.css">
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+
+    <!-- main css for template -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <!-- ===============>> Preloader start here <<================= -->
+    <div class="preloader">
+        <img src="assets/images/logo/preloader.jpg" alt="Logo">
+    </div>
+    <!-- ===============>> Preloader end here <<================= -->
+
+
+
+    <!-- ================> header section start here <================== -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar navbar-expand-xl">
+                <!-- TODO: Replace asset src -->
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/images/logo/logo.png" alt="NFT Card Shop">
+                </a>
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler--icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" aria-current="page" href="#home">Home</a>
+                        <a class="nav-link" aria-current="page" href="#about-nav">About</a>
+                        <a class="nav-link" href="#roadmap-nav">Roadmap</a>
+                        <a class="nav-link" href="#team-nav">Team</a>
+                        <a class="nav-link" href="#artist-nav">Contract</a>
+                        <a class="nav-link" href="#faq-nav">FAQ</a>
+                    </div>
+                    <div class="social-btns">
+                        <ul class="social">
+                            <li class="social__item">
+                                <a href="https://twitter.com/NFTCardShop" class="social__link"><i
+                                        class="fab fa-twitter"></i></a>
+                            </li>
+                            <!-- TODO: Replace with discord invite link -->
+                            <li class="social__item">
+                                <a href="#" class="social__link"><i class="fab fa-discord"></i></a>
+                            </li>
+                            <!-- <li class="social__item">
+                                <a href="#" class="social__link"><i class="fab fa-twitch"></i></a>
+                            </li> -->
+                            <li class="social__item">
+                                <a href="https://instagram.com/nft_card_shop" class="social__link">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- TODO: Open the vault -->
+                        <!-- <a id="vaultBtn" href="#vault-nav" class="default-btn" onclick="vaultButtonClicked()">
+                            <span>MetaMask Connect</span>
+                        </a> -->
+                    </div>
+
+                </div>
+            </nav>
+        </div>
+
+    </header>
+    <!-- ================> header section end here <================== -->
+
+
+
+    <!-- ================> Banner section start here <================== -->
+    <section id="home" class="banner" style="background-image: url(assets/images/banner/banner-bg.jpg);">
+        <div class="container">
+            <div class="banner__wrapper">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6">
+                        <div class="banner__content" data-aos="fade-right" data-aos-duration="2000">
+                            <h1>Welcome to NFT Card Shop</h1>
+                            <p>A first-of-its-kind virtual trading card experience. Allowing you to trade securely, and
+                                enjoy hassle-free nostalgia.</p>
+                            <!-- TODO: Replace href with link to our opensea account -->
+                            <a href="#" class="default-btn">View On Opensea (available after launch)</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="banner__thumb" data-aos="fade-left" data-aos-duration="2000">
+                            <div class="swiper banner__thumb-slider">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="banner__thumb-item">
+                                            <img src="assets/images/nft/01.png" alt="NFT Image">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="banner__thumb-item">
+                                            <img src="assets/images/nft/02.png" alt="NFT Image">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="banner__thumb-item">
+                                            <img src="assets/images/nft/03.png" alt="NFT Image">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="banner__thumb-item">
+                                            <img src="assets/images/nft/04.png" alt="NFT Image">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="banner__thumb-item">
+                                            <img src="assets/images/nft/05.png" alt="NFT Image">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="banner__thumb-item">
+                                            <img src="assets/images/nft/06.png" alt="NFT Image">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="banner__thumb-item">
+                                            <img src="assets/images/nft/07.png" alt="NFT Image">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <span id="about-nav"></span>
+    </section>
+    <!-- ================> Banner section end here <================== -->
+
+
+
+    <!-- ================> About section start here <================== -->
+    <section id="about" class="about padding-top padding-bottom">
+        <div class="container">
+            <div class="about__wrapper">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6">
+                        <div class="about__thumb" data-aos="fade-up" data-aos-duration="1500">
+                            <!-- TODO: Replace src -->
+                            <img src="assets/images/about/01.png" alt="About Image">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="about__content" data-aos="fade-up" data-aos-duration="2000">
+                            <h4>About the Collection</h4>
+                            <p>Have you ever wanted to relive the trading card experience, but feel you lack the time
+                                and effort to physically collect the cards? Worried that you could lose your most
+                                valuable
+                                collectibles, or risk trading into fakes?
+                            </p>
+                            <p> We get it, and that’s why we created the NFT card shop, to make trading easier and
+                                hassle-free for the end user. We’re a digital trading card outlet that ties virtual our
+                                original
+                                trading card NFTs
+                                to physical graded cards of the same design. </p>
+                            <p>It’s all done using a complex smart
+                                contract, with
+                                the value of the digital cards directly linked to a physical card that we store securely
+                                on your behalf.
+                                This means that when you trade, you don’t have to think about logistics or authenticity
+                                - because we’ve got it covered. All the fun, none of the fuss.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <span id="vault-nav"></span>
+        <span id="gallery-nav-vaultclosed"></span>
+    </section>
+    <!-- ================> About section end here <================== -->
+
+
+
+    <!-- ================> Vault section start here <================== -->
+    <section id="vault" class="about padding-top padding-bottom" style="display: none;">
+        <div class="container">
+            <div class="about__wrapper">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-4">
+                        <div class="about__thumb" data-aos="fade-up" data-aos-duration="1500">
+                            <!-- TODO: Replace src -->
+                            <img src="assets/images/about/vault.jpg" alt="About Image">
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="about__content" data-aos="fade-up" data-aos-duration="2000">
+                            <h4>The Vault</h4>
+                            <p>If you have any Cards, they will appear here. You may request to hold your physical card
+                                if you wish, as the holder of the NFT is the rightful owner of the physical card as
+                                well.</p>
+                            <form id="vault-form" onsubmit="false">
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="inputEmail4">Email</label>
+                                        <input type="email" class="form-control" id="inputEmail4" placeholder="email">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputAddress">Address</label>
+                                    <input type="text" class="form-control" id="inputAddress"
+                                        placeholder="1234 Main St">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputAddress2">Apt/Studio/Floor Number</label>
+                                    <input type="text" class="form-control" id="inputAddress2"
+                                        placeholder="Apartment, studio, or floor">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="inputCity">City</label>
+                                        <input type="text" class="form-control" id="inputCity">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="inputState">State</label>
+                                        <select id="inputState" class="form-control">
+                                            <option selected>Choose...</option>
+                                            <option>Alabama</option>
+                                            <option>Alaska</option>
+                                            <option>Arizona</option>
+                                            <option>Arkansas</option>
+                                            <option>California</option>
+                                            <option>Colorado</option>
+                                            <option>Connecticut</option>
+                                            <option>Delaware</option>
+                                            <option>Florida</option>
+                                            <option>Georgia</option>
+                                            <option>Hawaii</option>
+                                            <option>Idaho</option>
+                                            <option>Illinois</option>
+                                            <option>Indiana</option>
+                                            <option>Iowa</option>
+                                            <option>Kansas</option>
+                                            <option>Kentucky</option>
+                                            <option>Louisiana</option>
+                                            <option>Maine</option>
+                                            <option>Maryland</option>
+                                            <option>Massachusetts</option>
+                                            <option>Michigan</option>
+                                            <option>Minnesota</option>
+                                            <option>Mississippi</option>
+                                            <option>Missouri</option>
+                                            <option>Montana</option>
+                                            <option>Nebraska</option>
+                                            <option>Nevada</option>
+                                            <option>New Hampshire</option>
+                                            <option>New Jersey</option>
+                                            <option>New Mexico</option>
+                                            <option>New York</option>
+                                            <option>North Carolina</option>
+                                            <option>North Dakota</option>
+                                            <option>Ohio</option>
+                                            <option>Oklahoma</option>
+                                            <option>Oregon</option>
+                                            <option>Pennsylvania</option>
+                                            <option>Rhode Island</option>
+                                            <option>South Carolina</option>
+                                            <option>South Dakota</option>
+                                            <option>Tennessee</option>
+                                            <option>Texas</option>
+                                            <option>Utah</option>
+                                            <option>Vermont</option>
+                                            <option>Virginia</option>
+                                            <option>Washington</option>
+                                            <option>West Virginia</option>
+                                            <option>Wisconsin</option>
+                                            <option>Wyoming</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-2">
+                                        <label for="inputZip">Zip</label>
+                                        <input type="text" class="form-control" id="inputZip">
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="form-row">
+                                    <button type="submit" class="btn btn-primary" onclick="formSubmit()">Request
+                                        Card</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <span id="gallery-nav-vaultopen"></span>
+    </section>
+    <!-- ================> Vault section end here <================== -->
+
+
+
+    <!-- ================> Gallery section start here <================== -->
+    <section id="gallery" class="gallery padding-top padding-bottom"
+        style="background-image: url(assets/images/gallery/bg.jpg);" data-aos="fade-up" data-aos-duration="1500">
+        <div class="container">
+            <div class="section-header">
+                <h2>Physical Card Collectibles</h2>
+                <p>A lot of thought has gone into the cards that we’ll be delivering. Each of our original designs
+                    offer a classic feel, but also bring a refreshing boost to the trading card market.</p>
+            </div>
+            <div class="gallery__wrapper">
+                <div class="swiper gallery__slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="gallery__item">
+                                <img src="assets/images/nft/01.png" alt="NFT Item Image">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="gallery__item">
+                                <img src="assets/images/nft/02.png" alt="NFT Item Image">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="gallery__item">
+                                <img src="assets/images/nft/03.png" alt="NFT Item Image">
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="gallery__item">
+                                <img src="assets/images/nft/04.png" alt="NFT Item Image">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="gallery__item">
+                                <img src="assets/images/nft/05.png" alt="NFT Item Image">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="gallery__item">
+                                <img src="assets/images/nft/06.png" alt="NFT Item Image">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="gallery__item">
+                                <img src="assets/images/nft/07.png" alt="NFT Item Image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <span id="roadmap-nav"></span>
+    </section>
+    <!-- ================> Gallery section end here <================== -->
+
+
+
+    <!-- ================> Roadmap section start here <================== -->
+    <section id="roadmap" class="roadmap padding-top padding-bottom">
+        <div class="container">
+            <div class="roadmap__wrapper">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="roadmap__content">
+                            <div class="section-header" data-aos="fade-up" data-aos-duration="1000">
+                                <h2>Growth Roadmap</h2>
+                                <p>In order to display how serious we are about the growth of our project, we’ve put
+                                    together a
+                                    roadmap that outlines our plans.</p>
+                            </div>
+                            <div class="roadmap__timeline">
+                                <div class="roadmap__timeline-wrapper">
+                                    <div class="roadmap__timeline-item" data-aos="fade-up" data-aos-duration="500">
+                                        <div class="roadmap__timeline-inner">
+                                            <div class="roadmap__timeline-title">
+                                                <h4>Collect and Grade</h4>
+                                                <p>20%</p>
+                                            </div>
+                                            <div class="roadmap__timeline-text">
+                                                <p>We have and will continue to collect a wide variety of high-value
+                                                    sports
+                                                    collectibles and memorabilia, which
+                                                    will make up the physical side of our collection.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="roadmap__timeline-item" data-aos="fade-up" data-aos-duration="700">
+                                        <div class="roadmap__timeline-inner">
+                                            <div class="roadmap__timeline-title">
+                                                <h4>Authenticate</h4>
+                                                <p>40%</p>
+                                            </div>
+                                            <div class="roadmap__timeline-text">
+                                                <p>We’ll have each of our new assets individually graded by
+                                                    professionals, to ensure authenticity
+                                                    and quality across the collection.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="roadmap__timeline-item" data-aos="fade-up" data-aos-duration="1000">
+                                        <div class="roadmap__timeline-inner">
+                                            <div class="roadmap__timeline-title">
+                                                <h4>Digital Design</h4>
+                                                <p>60%</p>
+                                            </div>
+                                            <div class="roadmap__timeline-text">
+                                                <p>We’ll create a unique NFT to digitally represent each item in our
+                                                    collection, which we’ll release
+                                                    as NFTs.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="roadmap__timeline-item" data-aos="fade-up" data-aos-duration="1200">
+                                        <div class="roadmap__timeline-inner">
+                                            <div class="roadmap__timeline-title">
+                                                <h4>Prepare for Release</h4>
+                                                <p>80%</p>
+                                            </div>
+                                            <div class="roadmap__timeline-text">
+                                                <p>We’ll announce the date of our launch, allowing our community to
+                                                    prepare the big day. Potential
+                                                    minters will be able to see what we’re going to offer with sneak
+                                                    peeks of our designs.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="roadmap__timeline-item" data-aos="fade-up" data-aos-duration="1500">
+                                        <div class="roadmap__timeline-inner">
+                                            <div class="roadmap__timeline-title">
+                                                <h4>Release.</h4>
+                                                <p>100%</p>
+                                            </div>
+                                            <div class="roadmap__timeline-text">
+                                                <p>We’ll launch the first wave of our collection, consisting of X
+                                                    digital assets. Will you be collecting?</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <span id="team-nav"></span>
+    </section>
+    <!-- ================> Roadmap section end here <================== -->
+
+
+
+    <!-- ================> Team section start here <================== -->
+    <section id="team" class="team padding-top padding-bottom"
+        style="background-image: url(assets/images/team/bg.jpg);">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up" data-aos-duration="1000">
+                <h2>Meet The Team</h2>
+                <p>We have a great team supporting our launch, bringing together a variety of skills to create a
+                    strong foundation.
+                </p>
+            </div>
+            <div class="team__wrapper">
+                <div class="row g-4">
+                    <div class="col-lg">
+                        <div class="team__item team__item--bg-3" data-aos="flip-right" data-aos-duration="1000">
+                            <div class="team__inner">
+                                <div class="team__thumb">
+                                    <img src="assets/images/team/03.png" alt="team Image">
+                                </div>
+                                <div class="team__content">
+                                    <!-- TODO: Change link to do Something meaningful when they click on the team member -->
+                                    <h4><a href="https://www.linkedin.com/in/kyle-wallgren-1469b51bb">Kyle</a></h4>
+                                    <p>The Collector</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg">
+                        <div class="team__item team__item--bg-4" data-aos="flip-right" data-aos-duration="1200">
+                            <div class="team__inner">
+                                <div class="team__thumb">
+                                    <img src="assets/images/team/05.png" alt="team Image">
+                                </div>
+                                <div class="team__content">
+                                    <!-- TODO: Change link to do Something meaningful when they click on the team member -->
+                                    <h4><a href="https://www.linkedin.com/in/henrique-martino-25260a193">Henrique</a>
+                                    </h4>
+                                    <p>The Glue</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg">
+                        <div class="team__item team__item--bg-1" data-aos="flip-right" data-aos-duration="1600">
+                            <div class="team__inner">
+                                <div class="team__thumb">
+                                    <img src="assets/images/team/04.png" alt="team Image">
+                                </div>
+                                <div class="team__content">
+                                    <!-- TODO: Change link to do Something meaningful when they click on the team member -->
+                                    <h4><a href="https://www.instagram.com/im.isteria/">Isteria</a></h4>
+                                    <p>The Artist</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg">
+                        <div class="team__item team__item--bg-2" data-aos="flip-right" data-aos-duration="1600">
+                            <div class="team__inner">
+                                <div class="team__thumb">
+                                    <img src="assets/images/team/01.png" alt="team Image">
+                                </div>
+                                <div class="team__content">
+                                    <!-- TODO: Change link to do Something meaningful when they click on the team member -->
+                                    <h4><a href="https://www.linkedin.com/in/graysoncroom/">Grayson</a></h4>
+                                    <p>The Dev</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <span id="artist-nav"></span>
+    </section>
+    <!-- ================> Team section end here <================== -->
+
+
+
+    <!-- ================>Contract section start here <================== -->
+    <section id="artist" class="artist padding-top padding-bottom">
+        <!-- NOTE: IDs and Classes named artist for legacy reasons -->
+        <div class="container">
+            <div class="artist__wrapper">
+                <div class="row g-5 align-items-center">
+                    <!-- <div class="col-lg-6">
+                        <div class="artist__thumb" data-aos="fade-up" data-aos-duration="1000">
+                            <img src="assets/images/artist/01.png" alt="Artist Image">
+                        </div>
+                    </div> -->
+                    <div class="col-lg-4">
+                        <div class="artist__content" data-aos="fade-up" data-aos-duration="1500">
+                            <h2 class="mb-4">The Contract</h2>
+                            <p>This is our contract.
+                                Built on top of <a href="https://docs.openzeppelin.com/contracts/3.x/erc721"
+                                    class="color__theme-color">ERC721</a>,
+                                the industry standard for serious non-fungible tokens. This is the same set of standards
+                                used in the creation of the BAYC collection. The assets are stored on IPFS, so that
+                                your NFT will remain with you no matter what happens to us.
+                            </p>
+                            <!-- TODO: Change href to link to our contract on EtherScan -->
+                            <a href="#" class="default-btn">
+                                <span>Our Contract on Etherscan</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="artist__content" data-aos="fade-up" data-aos-duration="1500">
+                            <pre style="max-height: 750px"><code class="language-solidity line-numbers">// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.10;
+
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/utils/Counters.sol";
+
+contract NFTCardShop is ERC721, ERC721URIStorage, Ownable {
+    using Counters for Counters.Counter;
+
+    Counters.Counter private _tokenIdCounter;
+
+    uint256 public tokenTransferUnlockRequestWaitPeriod;
+
+    uint256 public constant MAXIMUM_TOKEN_TRANSFER_UNLOCK_REQUEST_WAITING_PERIOD = 40 days;
+
+    event TokenTransferUnlockRequest(uint256 tokenId, uint256 tokenTransferUnlockRequestDate);
+
+    // tokenId => token is in vault, verified, and graded
+    mapping(uint256 => bool) public tokenIsInVaultAndGraded;
+
+    // tokenId => last token transfer date as seconds since unix epoch
+    mapping(uint256 => uint256) public tokenIdToTokenTransferUnlockRequestDate;
+
+    bool public cardShopRetainsTransferControl;
+
+    constructor() ERC721("NFTCardShop", "CaSh") {
+        cardShopRetainsTransferControl = true;
+        tokenTransferUnlockRequestWaitPeriod = MAXIMUM_TOKEN_TRANSFER_UNLOCK_REQUEST_WAITING_PERIOD;
+    }
+
+    function _baseURI() internal pure override returns (string memory) {
+        return "https://gateway.pinata.cloud/ipfs/";
+    }
+
+    function safeMint(address to, string memory uri) public onlyOwner {
+        uint256 tokenId = _tokenIdCounter.current();
+        _tokenIdCounter.increment();
+        _safeMint(to, tokenId);
+        _setTokenURI(tokenId, uri);
+        tokenIsInVaultAndGraded[tokenId] = true;
+        assert(tokenIdToTokenTransferUnlockRequestDate[tokenId] == 0);
+    }
+
+    function _beforeTokenTransfer(
+        address from, 
+        address to, 
+        uint256 tokenId
+    ) internal override(ERC721) {
+        require(tokenIsInVaultAndGraded[tokenId] || !cardShopRetainsTransferControl);
+    }
+
+    // true => token was transfer unlocked
+    // false => token was not transfer unlocked
+    // NOTE: The idea here is that we are giving the vault an amount of time to
+    // recieve, verify, and grade a card coming back into the vault. However,
+    // in the event that the vault stops operating for any reason, we want to provide
+    // a mechanism by which holders of an NFT from this collection will still be able to
+    // trade. This amount of time is defined by the contract member variable `transferTokenUnlockRequestWaitPeriod`.
+    // If the vault has stopped operating, then it will not call the `removeTokenTransferUnlockRequest(uint256 tokenId)` function.
+    // As such, after that amount of time has passed, the card (aka token, NFT) holder will be able to call this function again
+    // which will allow the holder to conduct transactions as if the card was in the vault.
+    // NOTE 2: We do this to protect the collection from even us and give the community the ability to adapt to
+    // a situation where the vault is no longer operational. This mechanism makes our collection future-proof.
+    function attemptTokenTransferUnlock(uint256 tokenId) public returns(bool) {
+        require(!tokenIsInVaultAndGraded[tokenId], "NFTCardShop: No need to request unlock. Cards that are in the vault can be transferred at will.");
+        if (tokenIdToTokenTransferUnlockRequestDate[tokenId] == 0) {
+            tokenIdToTokenTransferUnlockRequestDate[tokenId] = block.timestamp;
+            emit TokenTransferUnlockRequest(tokenId, tokenIdToTokenTransferUnlockRequestDate[tokenId]);
+            return false;
+        } else if ((tokenIdToTokenTransferUnlockRequestDate[tokenId] + tokenTransferUnlockRequestWaitPeriod) >= block.timestamp) {
+            tokenIsInVaultAndGraded[tokenId] = true;
+            return true;
+        }
+        return false;
+    }
+
+    function cardRemovedFromVault(uint256 tokenId) public onlyOwner {
+        require(tokenIsInVaultAndGraded[tokenId], "NFTCardShop: Card cannot be removed from the vault unless it is currently in the vault.");
+        tokenIsInVaultAndGraded[tokenId] = false;
+        // remove vault checkmark (using setTokenURI)
+        //setTokenURI(tokenId, /* URI without checkmark */);
+    }
+
+    function cardReturnedToVault(uint256 tokenId) public onlyOwner {
+        require(!tokenIsInVaultAndGraded[tokenId], "NFTCardShop: Card cannot be returned to the vault if it is already in the vault.");
+        removeTokenTransferUnlockRequest(tokenId);
+        tokenIsInVaultAndGraded[tokenId] = true;
+        // add vault checkmark to NFT (using setTokenURI)
+        //setTokenURI(tokenId, /* URI with checkmark */);
+    }
+
+    function removeTokenTransferUnlockRequest(uint256 tokenId) public onlyOwner {
+        tokenIdToTokenTransferUnlockRequestDate[tokenId] = 0;
+    }
+
+    // TODO: Implement a voting mechanism for our Token holders.
+    // This will allow the community to decide whether or not they
+    // want the trading security services of the vault
+    function toggleTransferControl() public onlyOwner {
+        cardShopRetainsTransferControl = !cardShopRetainsTransferControl;
+    }
+
+    function setTokenTransferUnlockRequestWaitPeriod(uint256 amountOfTime) public onlyOwner {
+        require(amountOfTime <= MAXIMUM_TOKEN_TRANSFER_UNLOCK_REQUEST_WAITING_PERIOD);
+        tokenTransferUnlockRequestWaitPeriod = amountOfTime;
+    }
+
+    // will be used to update the NFT with a "Card Secured In Vault" checkmark
+    function setTokenURI(uint256 tokenId, string memory _tokenURI) private onlyOwner {
+        super._setTokenURI(tokenId, _tokenURI);
+    }
+
+    // ==== Required Overrides (required by solidity) ====
+
+    function _burn(uint256 tokenId) internal override(ERC721, ERC721URIStorage) {
+        super._burn(tokenId);
+    }
+
+    function tokenURI(uint256 tokenId) public view override(ERC721, ERC721URIStorage) returns (string memory) {
+        return super.tokenURI(tokenId);
+    }
+}                                                                                                       
+                            </code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ================>Artist section end here <================== -->
+
+
+
+    <!-- ================>Community section start here <================== -->
+    <section class="community padding-top padding-bottom" style="background-image:url(assets/images/community/bg.jpg)">
+        <div class="container">
+            <div class="comminity__wrapper">
+                <div class="community__content text-center" data-aos="zoom-in" data-aos-duration="1000">
+                    <h2>Join NFT Card Shop</h2>
+                    <p>Do you want to be a part of something great? Would you like to claim your slice of the
+                        future of digital trading cards? Becoming a part of our community is as simple as joining our
+                        Discord, and getting involved in the conversation.</p>
+                    <!-- TODO: Fix the href to link to the dicord invite link -->
+                    <a href="#" class="default-btn"><span>Join Our Discord</span></a>
+                </div>
+            </div>
+        </div>
+        <span id="faq-nav"></span>
+    </section>
+    <!-- ================>Community section end here <================== -->
+
+
+
+    <!-- ================FAQ section start here <================== -->
+    <section id="faq" class="faq padding-top padding-bottom">
+        <div class="container">
+            <div class="section-header">
+                <h2>Card Shop FAQ</h2>
+                <p> Our project is what the trading card space needs to thrive, but we appreciate that you might
+                    have some questions. Our team is committed to having a transparent relationship with the community.
+                    Hopefully we can answer most of these questions right here.
+            </div>
+            <div class="faq__wrapper">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="accordion" id="faqAccordion2">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="accordion__item" data-aos="fade-up" data-aos-duration="1000">
+                                        <div class="accordion__header" id="faq1">
+                                            <button class="accordion__button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#faqBody1"
+                                                aria-expanded="false" aria-controls="faqBody1">
+                                                01
+                                                When is the official launch? <span class="plus-icon"></span>
+                                            </button>
+                                        </div>
+                                        <div id="faqBody1" class="accordion-collapse collapse" aria-labelledby="faq1"
+                                            data-bs-parent="#faqAccordion2">
+                                            <div class="accordion__body">
+                                                To be announced!
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div class="col-12">
+                                    <div class="accordion__item" data-aos="fade-up" data-aos-duration="1100">
+                                        <div class="accordion__header" id="faq2">
+                                            <button class="accordion__button" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#faqBody2" aria-expanded="true"
+                                                aria-controls="faqBody2">
+                                                02
+                                                What will the mint price be? <span class="plus-icon"></span>
+                                            </button>
+                                        </div>
+                                        <div id="faqBody2" class="accordion-collapse collapse show"
+                                            aria-labelledby="faq2" data-bs-parent="#faqAccordion2">
+                                            <div class="accordion__body">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
+                                                eligendi quod ipsam dolore tenetur
+                                                officia eos ratione illum tempora, odio fugiat, rerum error expedita!
+                                                Delectus odio consequuntur
+                                                placeat a sapiente.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
+                                <div class="col-12">
+                                    <div class="accordion__item" data-aos="fade-up" data-aos-duration="1200">
+                                        <div class="accordion__header" id="faq3">
+                                            <button class="accordion__button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#faqBody3"
+                                                aria-expanded="false" aria-controls="faqBody3">
+                                                02
+                                                Do I own the physical card?<span class="plus-icon"></span>
+                                            </button>
+                                        </div>
+                                        <div id="faqBody3" class="accordion-collapse collapse" aria-labelledby="faq3"
+                                            data-bs-parent="#faqAccordion2">
+                                            <div class="accordion__body">
+                                                Yes, the holder of the NFT is the legal owner of the physical asset
+                                                associated with the card.
+                                                This means that if you want to hold the physical card for yourself, all
+                                                you need to do is Sign
+                                                into MetaMask via the button at the top of the page and request the
+                                                physical card via the form
+                                                you will be brought to.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div class="col-12">
+                                    <div class="accordion__item" data-aos="fade-up" data-aos-duration="1300">
+                                        <div class="accordion__header" id="faq4">
+                                            <button class="accordion__button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#faqBody4"
+                                                aria-expanded="false" aria-controls="faqBody4">
+                                                04
+                                                How do I get a FREE Card?<span class="plus-icon"></span>
+                                            </button>
+                                        </div>
+                                        <div id="faqBody4" class="accordion-collapse collapse" aria-labelledby="faq4"
+                                            data-bs-parent="#faqAccordion2">
+                                            <div class="accordion__body">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
+                                                eligendi quod ipsam dolore tenetur
+                                                officia eos ratione illum tempora, odio fugiat, rerum error expedita!
+                                                Delectus odio consequuntur
+                                                placeat a sapiente.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
+                                <!-- <div class="col-12">
+                                    <div class="accordion__item" data-aos="fade-up" data-aos-duration="1400">
+                                        <div class="accordion__header" id="faq5">
+                                            <button class="accordion__button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#faqBody5"
+                                                aria-expanded="false" aria-controls="faqBody5">
+                                                05
+                                                How do I get whitelisted?<span class="plus-icon"></span>
+                                            </button>
+                                        </div>
+                                        <div id="faqBody5" class="accordion-collapse collapse" aria-labelledby="faq5"
+                                            data-bs-parent="#faqAccordion2">
+                                            <div class="accordion__body">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
+                                                eligendi quod ipsam dolore tenetur
+                                                officia eos ratione illum tempora, odio fugiat, rerum error expedita!
+                                                Delectus odio consequuntur
+                                                placeat a sapiente.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
+                                <!-- <div class="col-12">
+                                    <div class="accordion__item" data-aos="fade-up" data-aos-duration="1500">
+                                        <div class="accordion__header" id="faq6">
+                                            <button class="accordion__button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#faqBody6"
+                                                aria-expanded="false" aria-controls="faqBody6">
+                                                06
+                                                How can I use my NFT ?<span class="plus-icon"></span>
+                                            </button>
+                                        </div>
+                                        <div id="faqBody6" class="accordion-collapse collapse" aria-labelledby="faq6"
+                                            data-bs-parent="#faqAccordion2">
+                                            <div class="accordion__body">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
+                                                eligendi quod ipsam dolore tenetur
+                                                officia eos ratione illum tempora, odio fugiat, rerum error expedita!
+                                                Delectus odio consequuntur
+                                                placeat a sapiente.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ================FAQ section end here <================== -->
+
+
+
+    <!-- ================> Footer section start here <================== -->
+    <footer class="footer">
+        <div class="footer__wrapper padding-top padding-bottom"
+            style="background-image: url(assets/images/footer/bg.png);">
+            <div class="container">
+                <div class="footer__content text-center">
+                    <h3>NFT Card Shop</h3>
+                    <p><a href="mailto:sales@nftcardshop.io">sales@nftcardshop.io</a></p>
+                    <ul class="social justify-content-center">
+                        <li class="social__item">
+                            <a href="https://twitter.com/NFTCardShop" class="social__link">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <!-- TODO: Replace link -->
+                        <li class="social__item">
+                            <a href="#" class="social__link"><i class="fab fa-discord"></i></a>
+                        </li>
+                        <!-- <li class="social__item">
+                            <a href="#" class="social__link"><i class="fab fa-twitch"></i></a>
+                        </li> -->
+                        <li class="social__item">
+                            <a href="https://instagram.com/nft_card_shop" class="social__link">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer__copyright">
+            <div class="container">
+                <div class="text-center py-4">
+                    <p class=" mb-0">© 2022 The Card Shop | All Rights Reserved
+                        <a href="#" class="color__theme-color"></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ================> Footer section end here <================== -->
+
+    <!-- vendor plugins -->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/all.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/aos.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/prism.js"></script>
+    <script src="assets/js/ethers-5.2.umd.min.js" type="application/javascript"></script>
+    <script src="assets/js/vault.js"></script>
+</body>
+
+</html>

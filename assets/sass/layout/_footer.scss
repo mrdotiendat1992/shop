@@ -1,0 +1,56 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site/application.
+// -----------------------------------------------------------------------------
+
+
+.footer {
+
+    &__wrapper {
+        @include background-cover;
+    }
+
+    &__content {
+        h3 {
+            @extend %mb-10;
+        }
+
+        p {
+            @include font-size(18px);
+            color: $white-color;
+            @extend %mb-20;
+        }
+    }
+
+}
+
+.social {
+    @extend %flex;
+    @extend %align-items-center;
+    @extend %list-none;
+    @extend %pl-0;
+    @extend %mb-0;
+    gap: 15px;
+
+    &__link {
+        @extend %d-inline-block;
+        @extend %text-center;
+        @include box(35px);
+        @include add-prefix(transition, background-color .2s linear);
+        line-height: 35px;
+        border-radius: 5px;
+        background-color: $white-color;
+
+        svg {
+            color: $primary-color;
+            @include font-size(17px);
+        }
+
+        @include hover {
+            background-color: $theme-color;
+
+            svg {
+                color: $white-color;
+            }
+        }
+    }
+}

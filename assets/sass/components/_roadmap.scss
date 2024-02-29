@@ -1,0 +1,96 @@
+.roadmap {
+    @extend %of-hidden;
+    background-image: url(../images/roadmap/road.png);
+    background-position: right;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    .section-header {
+        text-align: left;
+
+        p {
+            max-inline-size: 45ch;
+            margin-right: auto;
+            margin-left: initial;
+        }
+    }
+
+    &__timeline {
+        &-wrapper {
+            @extend %p-rel;
+
+            &:after {
+                @extend %p-abs;
+                height: 100%;
+                width: 10px;
+                background-color: $theme-color;
+                top: 0;
+                left: 0;
+                z-index: -1;
+            }
+        }
+
+        &-item {
+            @extend %p-rel;
+            margin-inline-start: 30px;
+
+            @include breakpoint(sm) {
+                margin-inline-start: 50px;
+            }
+
+            &::after {
+                @extend %p-abs;
+                @include box(22px);
+                @include add-prefix(transform, translateY(-50%));
+                border-radius: 50%;
+                background-color: $white-color;
+                border: 4px solid $theme-color;
+                left: -36px;
+                top: 50%;
+                z-index: 1;
+
+                @include breakpoint(sm) {
+                    left: -56px;
+                }
+            }
+
+
+            &:not(:last-child) {
+                margin-block-end: 50px;
+            }
+        }
+
+        &-inner {
+            @extend %p-30;
+            background-color: $white-color;
+            box-shadow: 10px 10px $theme-color;
+        }
+
+        &-title {
+            @extend %flex;
+            @extend %justify-between;
+            @extend %align-items-center;
+
+            h4 {
+                color: $primary-color;
+            }
+
+            p {
+                color: $theme-color;
+                @include font-size(24px);
+                font-weight: 700;
+            }
+        }
+
+        &-text {
+            p {
+                @extend %mb-0;
+                @include font-size(18px);
+                color: $primary-color;
+                font-weight: 500;
+            }
+        }
+
+    }
+
+}

@@ -1,0 +1,161 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+
+.header {
+    background-color: $primary-color;
+
+    &--fixed {
+        @include breakpoint(lg) {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            background-color: $secondary-color;
+        }
+    }
+
+    .navbar {
+        padding-block: 1.35rem;
+    }
+
+    .navbar-collapse {
+        @extend %mt-20;
+
+        @include breakpoint(xl) {
+            margin-top: 0;
+        }
+    }
+
+}
+
+.nav-link {
+    color: $white-color;
+    @extend %text-center;
+    font-weight: 700;
+    font-family: $title-font;
+
+    @include breakpoint(xl) {
+        text-align: left;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+
+    &--active,
+    &:hover,
+    &:focus {
+        color: $theme-color;
+    }
+}
+
+.navbar-toggler {
+    @extend %p-0;
+    @extend %mb-10;
+    @extend %mr-15;
+
+    &:focus {
+        border: none;
+        box-shadow: none;
+        outline: none;
+    }
+
+
+
+    &--icon {
+        @extend %p-rel;
+        @extend %d-inline-block;
+        background-color: $white-color;
+        height: 2px;
+        width: 27px;
+        @include add-prefix(transform, rotate(45deg) translateY(-5px));
+
+        &:after,
+        &:before {
+            @extend %p-abs;
+            @extend %w-100;
+            background-color: $white-color;
+            height: 2px;
+            @include add-prefix(transition, .3s all linear);
+        }
+
+        &:after {
+            bottom: 7px;
+            left: 0;
+            @include add-prefix(transform, rotate(-90deg) translateX(-6px));
+        }
+
+        &:before {
+            top: 7px;
+            left: 0;
+            opacity: 0;
+            @include add-prefix(transform, translateX(20px))
+        }
+
+
+    }
+
+    &.collapsed {
+        .navbar-toggler--icon {
+            transform: none;
+
+            &:after {
+                transform: none;
+            }
+
+            &:before {
+                opacity: 1;
+                transform: none;
+            }
+        }
+    }
+}
+
+.social-btns {
+    @extend %flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 40px;
+
+    @include breakpoint(xl) {
+        margin-left: 20px;
+        flex-direction: row;
+        margin-top: 0;
+    }
+
+    .default-btn {
+        border-radius: 5px;
+
+        span {
+            text-transform: capitalize;
+        }
+
+        &:hover {
+            @include add-prefix(transform, none);
+            background-color: darken($theme-color, $amount:10);
+        }
+    }
+}
+
+
+/*=-=-=-======< Section header start here >==========-=-=-=-*/
+.section-header {
+    @extend %text-center;
+    margin-bottom: 40px;
+
+    @include breakpoint(lg) {
+        margin-bottom: 60px;
+    }
+
+    h2 {
+        @extend %mb-15;
+    }
+
+    p {
+        max-inline-size: 63ch;
+        margin: auto;
+    }
+}
+
+/*=-=-=-======< Section header end here >==========-=-=-=-*/

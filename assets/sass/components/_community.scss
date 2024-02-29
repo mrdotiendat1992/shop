@@ -1,0 +1,17 @@
+.community {
+    @include background-cover;
+
+    &__content {
+        h2 {
+            @extend %mb-10;
+        }
+
+        p {
+            @extend %mb-20;
+
+            @include breakpoint(lg) {
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
