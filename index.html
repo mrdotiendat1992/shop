@@ -3,608 +3,109 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Điện Tử Nhật bãi</title>
+  <title>Xác thực bằng Google với Firebase</title>
+  <!-- Firebase App (Core) -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <!-- Firebase Authentication -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
   <style>
-    /* Tổng thể */
-* {
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    background-color: #f8f8f8;
-    scroll-behavior: smooth;
-  }
-  
-  /* Header */
-  header {
-    background-color: #007acc;
-    color: white;
-    padding: 20px;
-    transition: background-color 0.3s ease;
-  }
-  
-  header:hover {
-    background-color: #005f99;
-  }
-  
-  /* Hero Section */
-  .hero {
-    padding: 40px 20px;
-    background-color: #e6f2ff;
-  }
-  
-  .hero img {
-    width: 80%;
-    max-width: 600px;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-  }
-  
-  .hero img:hover {
-    transform: scale(1.05);
-  }
-  
-  .hero button {
-    background-color: #007acc;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .hero button:hover {
-    background-color: #005f99;
-  }
-  
-  /* Products Section */
-  .products {
-    padding: 40px 20px;
-    background-color: #ffffff;
-  }
-  
-  .products h2 {
-    margin-bottom: 30px;
-  }
-  
-  /* Carousel Container */
-  .carousel-container {
-    position: relative;
-    overflow: hidden;
-    margin: 0 auto;
-    max-width: 1000px;
-  }
-  
-  .carousel {
-    display: flex;
-    gap: 20px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    padding: 10px;
-  }
-  
-  /* Ẩn thanh cuộn */
-  .carousel::-webkit-scrollbar {
-    display: none;
-  }
-  .carousel {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-  
-  /* Nút bấm điều hướng */
-  .carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0,122,204,0.8);
-    border: none;
-    color: white;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 2;
-    transition: background-color 0.3s ease;
-  }
-  
-  .carousel-btn:hover {
-    background-color: rgba(0,122,204,1);
-  }
-  
-  .carousel-btn.left {
-    left: 10px;
-  }
-  
-  .carousel-btn.right {
-    right: 10px;
-  }
-  
-  /* Product Item */
-  .product-item {
-    background-color: #f1f1f1;
-    border-radius: 8px;
-    padding: 20px;
-    width: 220px;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    scroll-snap-align: start;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .product-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  }
-  
-  .product-item img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-  }
-  
-  .product-item img:hover {
-    transform: scale(1.05);
-  }
-  
-  .product-item button {
-    background-color: #007acc;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    margin-top: 10px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .product-item button:hover {
-    background-color: #005f99;
-  }
-  
-  /* Subscription Section */
-  .subscribe {
-    padding: 40px 20px;
-    background-color: #e6f2ff;
-  }
-  
-  .subscribe form {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
-  
-  .subscribe input[type="email"] {
-    padding: 10px;
-    width: 250px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .subscribe button {
-    background-color: #007acc;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .subscribe button:hover {
-    background-color: #005f99;
-  }
-  
-  /* Footer */
-  footer {
-    background-color: #007acc;
-    color: white;
-    padding: 20px;
-    transition: background-color 0.3s ease;
-  }
-  
-  footer:hover {
-    background-color: #005f99;
-  }
-  
-  /* Modal Section - Đặt hàng */
-  .modal {
-    display: none;
-    position: fixed;
-    z-index: 10;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.5);
-  }
-  
-  .modal-content {
-    background-color: #ffffff;
-    margin: 10% auto;
-    padding: 20px;
-    border-radius: 8px;
-    width: 90%;
-    max-width: 500px;
-    text-align: left;
-    position: relative;
-  }
-  
-  .modal-content h2 {
-    margin-top: 0;
-  }
-  
-  .modal-content label {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
-  }
-  
-  .modal-content input {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .modal-content button {
-    background-color: #007acc;
-    color: white;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-    margin-top: 15px;
-    width: 100%;
-    transition: background-color 0.3s ease;
-  }
-  
-  .modal-content button:hover {
-    background-color: #005f99;
-  }
-  
-  /* Nút đóng modal */
-  .close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 24px;
-    color: #aaa;
-    cursor: pointer;
-    transition: color 0.3s ease;
-  }
-  
-  .close:hover {
-    color: #000;
-  }
-  
-  /* Chatbot Styles */
-  #chatbot {
-    position: fixed;
-    bottom: 80px;
-    right: 20px;
-    width: 300px;
-    height: 400px;
-    background-color: white;
-    border: 1px solid #007acc;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    display: none;
-    flex-direction: column;
-    overflow: hidden;
-    z-index: 20;
-  }
-  
-  #chatbot-header {
-    background-color: #007acc;
-    color: white;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  #chatbot-messages {
-    flex: 1;
-    padding: 10px;
-    overflow-y: auto;
-    background-color: #f9f9f9;
-  }
-  
-  #chatbot-messages p {
-    margin: 10px 0;
-    padding: 8px;
-    border-radius: 5px;
-    background-color: #e6f2ff;
-  }
-  
-  #chatbot-form {
-    display: flex;
-    border-top: 1px solid #ddd;
-  }
-  
-  #chatbot-form input {
-    flex: 1;
-    border: none;
-    padding: 10px;
-    outline: none;
-  }
-  
-  #chatbot-form button {
-    background-color: #007acc;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  #chatbot-form button:hover {
-    background-color: #005f99;
-  }
-  
-  /* Chatbot Toggle Button */
-  #chatbot-toggle {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #007acc;
-    color: white;
-    padding: 15px;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 20;
-    transition: background-color 0.3s ease;
-  }
-  
-  #chatbot-toggle:hover {
-    background-color: #005f99;
-  }
-  
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    #auth-container {
+      background: #fff;
+      padding: 20px 40px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+    #login-btn {
+      background-color: #4285F4;
+      color: #fff;
+    }
+    #logout-btn {
+      background-color: #db4437;
+      color: #fff;
+    }
   </style>
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <h1>Chào mừng bạn đến với Thế Giới hàng Nhật bãi tốt nhất!</h1>
-  </header>
-  
-  <!-- Hero Section -->
-  <section class="hero">
-    <img src="https://i.pinimg.com/736x/f7/f2/a2/f7f2a27aa9d45b73d6b52a40eabb50ae.jpg" alt="Sản phẩm điện tử hiện đại">
-    <h2>Khám phá công nghệ tiên tiến,<br>trải nghiệm sự khác biệt</h2>
-    <button onclick="showOffer()">Nhận ưu đãi ngay</button>
-  </section>
-  
-  <!-- Products Section với carousel -->
-  <section class="products">
-    <h2>Sản phẩm Nổi Bật</h2>
-    <div class="carousel-container">
-      <button class="carousel-btn left" onclick="slideCarousel('left')">&#10094;</button>
-      <div class="carousel" id="productCarousel">
-        <!-- Sản phẩm 1 -->
-        <div class="product-item">
-          <img src="assets/imgs/tulanh/01.jpg" alt="Máy Tính Xách Tay" loading="lazy">
-          <h3>Tủ lạnh Panasonic National 01</h3>
-          <p>Tủ lạnh Panasonic National 8Kg giành cho gia đình 3-5 người</p>
-          <button onclick="buyNow('Tủ lạnh Panasonic')">Mua ngay</button>
-        </div>
-        <!-- Sản phẩm 2 -->
-        <div class="product-item">
-          <img src="assets/imgs/tulanh/01.jpg" alt="Máy Tính Xách Tay" loading="lazy">
-          <h3>Tủ lạnh Panasonic National 01</h3>
-          <p>Tủ lạnh Panasonic National 8Kg giành cho gia đình 3-5 người</p>
-          <button onclick="buyNow('Tủ lạnh Panasonic')">Mua ngay</button>
-        </div>
-        <!-- Sản phẩm 3 -->
-        <div class="product-item">
-          <img src="assets/imgs/tulanh/01.jpg" alt="Máy Tính Xách Tay" loading="lazy">
-          <h3>Tủ lạnh Panasonic National 01</h3>
-          <p>Tủ lạnh Panasonic National 8Kg giành cho gia đình 3-5 người</p>
-          <button onclick="buyNow('Tủ lạnh Panasonic')">Mua ngay</button>
-        </div>
-        <!-- Sản phẩm 4 -->
-        <div class="product-item">
-          <img src="assets/imgs/tulanh/01.jpg" alt="Máy Tính Xách Tay" loading="lazy">
-          <h3>Tủ lạnh Panasonic National 01</h3>
-          <p>Tủ lạnh Panasonic National 8Kg giành cho gia đình 3-5 người</p>
-          <button onclick="buyNow('Tủ lạnh Panasonic')">Mua ngay</button>
-        </div>
-        <!-- Sản phẩm 5 -->
-        <div class="product-item">
-          <img src="assets/imgs/tulanh/01.jpg" alt="Máy Tính Xách Tay" loading="lazy">
-          <h3>Tủ lạnh Panasonic National 01</h3>
-          <p>Tủ lạnh Panasonic National 8Kg giành cho gia đình 3-5 người</p>
-          <button onclick="buyNow('Tủ lạnh Panasonic')">Mua ngay</button>
-        </div>
-        <!-- Sản phẩm 6 -->
-        <div class="product-item">
-          <img src="assets/imgs/tulanh/01.jpg" alt="Máy Tính Xách Tay" loading="lazy">
-          <h3>Tủ lạnh Panasonic National 01</h3>
-          <p>Tủ lạnh Panasonic National 8Kg giành cho gia đình 3-5 người</p>
-          <button onclick="buyNow('Tủ lạnh Panasonic')">Mua ngay</button>
-        </div>
-        <!-- Sản phẩm 7 -->
-        <div class="product-item">
-          <img src="assets/imgs/tulanh/01.jpg" alt="Máy Tính Xách Tay" loading="lazy">
-          <h3>Tủ lạnh Panasonic National 01</h3>
-          <p>Tủ lạnh Panasonic National 8Kg giành cho gia đình 3-5 người</p>
-          <button onclick="buyNow('Tủ lạnh Panasonic')">Mua ngay</button>
-        </div>
-        <!-- Sản phẩm 8 -->
-        <div class="product-item">
-          <img src="assets/imgs/tulanh/01.jpg" alt="Máy Tính Xách Tay" loading="lazy">
-          <h3>Tủ lạnh Panasonic National 01</h3>
-          <p>Tủ lạnh Panasonic National 8Kg giành cho gia đình 3-5 người</p>
-          <button onclick="buyNow('Tủ lạnh Panasonic')">Mua ngay</button>
-        </div>
-      </div>
-      <button class="carousel-btn right" onclick="slideCarousel('right')">&#10095;</button>
-    </div>
-  </section>
-  
-  <!-- Subscription Section -->
-  <section class="subscribe">
-    <h2>Đăng ký nhận khuyến mãi</h2>
-    <form id="subscribeForm" onsubmit="subscribeEmail(event)">
-      <input type="email" id="subEmail" placeholder="Nhập email của bạn" required>
-      <button type="submit">Đăng ký</button>
-    </form>
-  </section>
-  
-  <!-- Purchase Modal -->
-  <div id="purchaseModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <h2>Thông tin đặt hàng</h2>
-      <form id="purchaseForm" onsubmit="submitPurchase(event)">
-        <label for="modalProductName">Sản phẩm:</label>
-        <input type="text" id="modalProductName" name="product" readonly>
-        
-        <label for="customerName">Họ và Tên:</label>
-        <input type="text" id="customerName" name="name" placeholder="Nhập họ tên" required>
-        
-        <label for="customerEmail">Email:</label>
-        <input type="email" id="customerEmail" name="email" placeholder="Nhập email" required>
-        
-        <label for="customerPhone">Số điện thoại:</label>
-        <input type="tel" id="customerPhone" name="phone" placeholder="Nhập số điện thoại" required>
-        
-        <label for="customerAddress">Địa chỉ:</label>
-        <input type="text" id="customerAddress" name="address" placeholder="Nhập địa chỉ" required>
-        
-        <button type="submit">Gửi Đơn Hàng</button>
-      </form>
-    </div>
+  <div id="auth-container">
+    <h2>Chào mừng!</h2>
+    <p id="status-text">Chưa đăng nhập</p>
+    <button id="login-btn" onclick="loginWithGoogle()">Đăng nhập bằng Google</button>
+    <button id="logout-btn" onclick="logout()" style="display:none;">Đăng xuất</button>
   </div>
-  
-  <!-- Chatbot Widget -->
-  <div id="chatbot">
-    <div id="chatbot-header">
-      Chat với chúng tôi
-      <span id="chatbot-close" onclick="toggleChatbot()">&times;</span>
-    </div>
-    <div id="chatbot-messages"></div>
-    <form id="chatbot-form" onsubmit="return sendMessage(event)">
-      <input type="text" id="chatbot-input" placeholder="Nhập tin nhắn..." required>
-      <button type="submit">Gửi</button>
-    </form>
-  </div>
-  <button id="chatbot-toggle" onclick="toggleChatbot()">Chat</button>
-  
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Điện Tử Chính Hãng</p>
-  </footer>
   
   <script>
-    // Hàm thông báo ưu đãi tại phần Hero
-function showOffer() {
-    alert("Chào mừng! Hãy khám phá các ưu đãi đặc biệt cho khách hàng thân thiết.");
-  }
-  
-  // Hàm mở modal đặt hàng
-  function buyNow(productName) {
-    document.getElementById("purchaseModal").style.display = "block";
-    document.getElementById("modalProductName").value = productName;
-  }
-  
-  // Hàm ẩn modal
-  function closeModal() {
-    document.getElementById("purchaseModal").style.display = "none";
-  }
-  
-  // Xử lý gửi thông tin đặt hàng
-  function submitPurchase(event) {
-    event.preventDefault();
-    const product = document.getElementById("modalProductName").value;
-    const name = document.getElementById("customerName").value;
-    const email = document.getElementById("customerEmail").value;
-    const phone = document.getElementById("customerPhone").value;
-    const address = document.getElementById("customerAddress").value;
-    
-    alert(`Cảm ơn ${name}! Đơn hàng cho sản phẩm "${product}" đã được gửi. Chúng tôi sẽ liên hệ với bạn sớm.`);
-    
-    document.getElementById("purchaseForm").reset();
-    closeModal();
-  }
-  
-  // Xử lý đăng ký nhận khuyến mãi qua email
-  function subscribeEmail(event) {
-    event.preventDefault();
-    const subEmail = document.getElementById("subEmail").value;
-    alert(`Cảm ơn bạn đã đăng ký! Thông tin khuyến mãi sẽ được gửi đến ${subEmail}.`);
-    document.getElementById("subscribeForm").reset();
-  }
-  
-  // Hàm vuốt carousel sang trái hay phải
-  function slideCarousel(direction) {
-    const carousel = document.getElementById("productCarousel");
-    const scrollAmount = 240;
-    
-    if (direction === 'left') {
-      carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-    } else {
-      carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-    }
-  }
-  
-  // Đóng modal khi click bên ngoài phần nội dung modal
-  window.onclick = function(event) {
-    const modal = document.getElementById("purchaseModal");
-    if (event.target === modal) {
-      closeModal();
-    }
+    // Cấu hình Firebase
+    const firebaseConfig = {
+    apiKey: "AIzaSyDuJgbqZ3jSDFbNvxA-lvJbuyNU6S9YSqw",
+    authDomain: "gamefree-8b262.firebaseapp.com",
+    projectId: "gamefree-8b262",
+    storageBucket: "gamefree-8b262.firebasestorage.app",
+    messagingSenderId: "1036396226845",
+    appId: "1:1036396226845:web:1ff225027315f37f6959f4",
+    measurementId: "G-LE3QJV219B"
   };
-  
-  /* Chatbot Logic */
-  // Toggle hiển thị chatbot
-  function toggleChatbot() {
-    const chatbot = document.getElementById("chatbot");
-    if (chatbot.style.display === "flex") {
-      chatbot.style.display = "none";
-    } else {
-      chatbot.style.display = "flex";
+
+    // Khởi tạo Firebase
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+
+    // Hàm đăng nhập bằng Google
+    async function loginWithGoogle() {
+      const provider = new firebase.auth.GoogleAuthProvider();
+      try {
+        const result = await auth.signInWithPopup(provider);
+        // Sau khi thành công, user sẽ có dữ liệu từ result.user
+        const user = result.user;
+        document.getElementById("status-text").textContent = `Chào mừng, ${user.displayName}`;
+        document.getElementById("logout-btn").style.display = 'inline-block';
+        document.getElementById("login-btn").style.display = 'none';
+      } catch (error) {
+        console.error("Lỗi đăng nhập:", error);
+        document.getElementById("status-text").textContent = "Đã xảy ra lỗi khi đăng nhập.";
+      }
     }
-  }
-  
-  // Xử lý gửi tin nhắn từ chatbot
-  function sendMessage(event) {
-    event.preventDefault();
-    const input = document.getElementById("chatbot-input");
-    const message = input.value.trim();
-    if (!message) return;
-    
-    // Hiển thị tin nhắn của người dùng
-    addChatMessage("Bạn: " + message);
-    
-    // Giả lập phản hồi đơn giản từ chatbot sau 1 giây
-    setTimeout(() => {
-      addChatMessage("Chatbot: Chào bạn, cảm ơn đã liên hệ! Chúng tôi sẽ phản hồi sớm.");
-    }, 1000);
-    
-    input.value = "";
-    return false;
-  }
-  
-  // Hàm thêm tin nhắn vào khung chat
-  function addChatMessage(msg) {
-    const messageContainer = document.getElementById("chatbot-messages");
-    const p = document.createElement("p");
-    p.textContent = msg;
-    messageContainer.appendChild(p);
-    messageContainer.scrollTop = messageContainer.scrollHeight;
-  }
-  
+
+    // Hàm đăng xuất
+    async function logout() {
+      try {
+        await auth.signOut();
+        document.getElementById("status-text").textContent = "Đã đăng xuất";
+        document.getElementById("logout-btn").style.display = 'none';
+        document.getElementById("login-btn").style.display = 'inline-block';
+      } catch (error) {
+        console.error("Lỗi đăng xuất:", error);
+        document.getElementById("status-text").textContent = "Đã xảy ra lỗi khi đăng xuất.";
+      }
+    }
+
+    // Theo dõi trạng thái xác thực: nếu người dùng đã đăng nhập hoặc đăng xuất
+    auth.onAuthStateChanged(user => {
+      if (user) {
+        window.location.href = "games.html"; // Chuyển đến danh sách game
+      } else {
+        document.getElementById("status-text").textContent = "Chưa đăng nhập";
+        document.getElementById("logout-btn").style.display = 'none';
+        document.getElementById("login-btn").style.display = 'inline-block';
+      }
+    });
   </script>
 </body>
 </html>
-
-

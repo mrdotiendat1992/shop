@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Danh sách game</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; }
+    .game-list { display: flex; flex-wrap: wrap; justify-content: center; }
+    .game-item { margin: 10px; cursor: pointer; }
+    img { width: 150px; height: 150px; border-radius: 10px; }
+  </style>
+</head>
+<body>
+  <h2>Chọn một game để chơi!</h2>
+  <div class="game-list">
+    <div class="game-item" onclick="playGame('banca/index.html')">
+      <img src="assets/images/banca.png" alt="Game 1">
+      <p>Game bắn cá</p>
+    </div>
+    <div class="game-item" onclick="playGame('calonnuotcabe/index.html')">
+      <img src="assets/images/calonnuotcabe.png" alt="Game 2">
+      <p>Game cá lớn nuốt cá bé</p>
+    </div>
+    <div class="game-item" onclick="playGame('camapdaiduong/index.html')">
+      <img src="assets/images/camapdaiduong.png" alt="Game 3">
+      <p>Game cá mập đại dương</p>
+    </div>
+    <div class="game-item" onclick="playGame('banxetang/index.html')">
+      <img src="assets/images/banxetang.png" alt="Game 4">
+      <p>Game bắn xe tăng</p>
+    </div>
+    <div class="game-item" onclick="playGame('chemhoaqua/index.html')">
+      <img src="assets/images/chemhoaqua.png" alt="Game 5">
+      <p>Game chém hoa quả</p>
+    </div>
+    <div class="game-item" onclick="playGame('chientranhbautroi/index.html')">
+      <img src="assets/images/chientranhbautroi.png" alt="Game 6">
+      <p>Game chiến tranh bầu trời</p>
+    </div>
+    <div class="game-item" onclick="playGame('covua/index.html')">
+      <img src="assets/images/covua.png" alt="Game 7">
+      <p>Game cờ vua</p>
+    </div>
+    <div class="game-item" onclick="playGame('mario/index.html')">
+      <img src="assets/images/mario.png" alt="Game 8">
+      <p>Game Mario (Nấm lùn)</p>
+    </div>
+    <div class="game-item" onclick="playGame('xepnha/index.html')">
+      <img src="assets/images/xepnha.png" alt="Game 9">
+      <p>Game xếp nhà</p>
+    </div>
+    <div class="game-item" onclick="playGame('nguoique/index.html')">
+      <img src="assets/images/nguoique.png" alt="Game 10">
+      <p>Game người que</p>
+    </div>
+  </div>
+
+  <script>
+    function playGame(gameUrl) {
+      window.location.href = gameUrl;
+    }
+  </script>
+</body>
+</html>
