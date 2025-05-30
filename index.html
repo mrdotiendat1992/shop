@@ -69,43 +69,8 @@
 
     // Hàm đăng nhập bằng Google
     async function loginWithGoogle() {
-      const provider = new firebase.auth.GoogleAuthProvider();
-      try {
-        const result = await auth.signInWithPopup(provider);
-        // Sau khi thành công, user sẽ có dữ liệu từ result.user
-        const user = result.user;
-        document.getElementById("status-text").textContent = `Chào mừng, ${user.displayName}`;
-        document.getElementById("logout-btn").style.display = 'inline-block';
-        document.getElementById("login-btn").style.display = 'none';
-      } catch (error) {
-        console.error("Lỗi đăng nhập:", error);
-        document.getElementById("status-text").textContent = "Đã xảy ra lỗi khi đăng nhập.";
-      }
-    }
-
-    // Hàm đăng xuất
-    async function logout() {
-      try {
-        await auth.signOut();
-        document.getElementById("status-text").textContent = "Đã đăng xuất";
-        document.getElementById("logout-btn").style.display = 'none';
-        document.getElementById("login-btn").style.display = 'inline-block';
-      } catch (error) {
-        console.error("Lỗi đăng xuất:", error);
-        document.getElementById("status-text").textContent = "Đã xảy ra lỗi khi đăng xuất.";
-      }
-    }
-
-    // Theo dõi trạng thái xác thực: nếu người dùng đã đăng nhập hoặc đăng xuất
-    auth.onAuthStateChanged(user => {
-      if (user) {
-        window.location.href = "games.html"; // Chuyển đến danh sách game
-      } else {
-        document.getElementById("status-text").textContent = "Chưa đăng nhập";
-        document.getElementById("logout-btn").style.display = 'none';
-        document.getElementById("login-btn").style.display = 'inline-block';
-      }
-    });
+      window.location.href = "games.html"; // Chuyển đến danh sách game
+    };
   </script>
 </body>
 </html>
