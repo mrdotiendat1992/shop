@@ -155,28 +155,31 @@ p {
 .affiliate-banner {
     position: relative;
     margin-top: 96px;
-    padding: 18px 0 0;
+    padding: 12px 0 0;
     background:
         radial-gradient(circle at top left, rgba(251, 191, 36, 0.24), transparent 34%),
         linear-gradient(135deg, rgba(245, 158, 11, 0.14), rgba(16, 185, 129, 0.10));
+    background-size: 100% 100%, 200% 200%;
+    animation: bannerGlow 10s ease-in-out infinite;
 }
 
 .affiliate-banner-inner {
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    align-items: start;
-    gap: 24px;
-    padding: 18px;
-    border-radius: var(--border-radius-lg);
+    grid-template-columns: minmax(0, 1.25fr) minmax(240px, 300px);
+    align-items: center;
+    gap: 16px;
+    padding: 12px 16px;
+    border-radius: 20px;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(255, 247, 237, 0.96));
     box-shadow: var(--shadow-lg);
     border: 1px solid rgba(251, 191, 36, 0.22);
     overflow: hidden;
+    animation: bannerRise 0.7s ease-out both;
 }
 
 .affiliate-banner-copy {
-    max-width: 760px;
-    padding: 10px 8px 10px 10px;
+    max-width: 640px;
+    padding: 2px 4px 2px 6px;
     min-width: 0;
 }
 
@@ -188,40 +191,42 @@ p {
     border-radius: 999px;
     background: rgba(251, 191, 36, 0.18);
     color: #92400e;
-    font-size: 0.85rem;
+    font-size: 0.78rem;
     font-weight: 800;
     letter-spacing: 0.04em;
     text-transform: uppercase;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
+    animation: badgePulse 2.8s ease-in-out infinite;
 }
 
 .affiliate-banner h2 {
-    margin-bottom: 8px;
-    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    margin-bottom: 6px;
+    font-size: clamp(1.25rem, 2vw, 1.65rem);
     line-height: 1.08;
 }
 
 .affiliate-banner p {
     margin-bottom: 0;
-    max-width: 720px;
+    max-width: 600px;
+    font-size: 0.98rem;
 }
 
 .affiliate-banner-media {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 240px;
+    min-height: 0;
     min-width: 0;
 }
 
 .affiliate-media-frame {
     position: relative;
-    width: min(100%, 420px);
+    width: min(100%, 300px);
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 16px;
-    border-radius: 28px;
+    padding: 10px;
+    border-radius: 22px;
     background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(255, 244, 214, 0.9));
     box-shadow: 0 18px 50px rgba(245, 158, 11, 0.18);
     border: 1px solid rgba(245, 158, 11, 0.18);
@@ -230,36 +235,111 @@ p {
 .affiliate-media-frame::before {
     content: 'Ưu đãi mùa hè';
     position: absolute;
-    top: -12px;
+    top: -10px;
     left: 16px;
-    padding: 6px 12px;
+    padding: 5px 10px;
     border-radius: 999px;
     background: #f59e0b;
     color: white;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: 800;
     letter-spacing: 0.04em;
     text-transform: uppercase;
     box-shadow: 0 8px 18px rgba(245, 158, 11, 0.3);
+    animation: shimmerBadge 3.5s linear infinite;
 }
 
 .affiliate-banner-image {
     display: block;
     width: 100%;
-    max-height: 420px;
+    max-height: 250px;
     height: auto;
     border-radius: 20px;
     object-fit: contain;
+    animation: floatGentle 5s ease-in-out infinite;
 }
 
 .affiliate-btn {
-    margin-top: 18px;
+    margin-top: 14px;
+    padding: 12px 22px;
+    font-size: 1rem;
     box-shadow: 0 8px 20px rgba(16, 185, 129, 0.25);
     white-space: nowrap;
+    animation: buttonFloat 2.8s ease-in-out infinite;
 }
 
 .affiliate-btn:hover {
     transform: translateY(-2px) scale(1.01);
+}
+
+@keyframes bannerGlow {
+    0%, 100% {
+        background-position: 0 0, 0% 50%;
+    }
+    50% {
+        background-position: 0 0, 100% 50%;
+    }
+}
+
+@keyframes bannerRise {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes floatGentle {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-4px);
+    }
+}
+
+@keyframes badgePulse {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-1px) scale(1.03);
+    }
+}
+
+@keyframes shimmerBadge {
+    0% {
+        box-shadow: 0 8px 18px rgba(245, 158, 11, 0.26);
+    }
+    50% {
+        box-shadow: 0 10px 22px rgba(245, 158, 11, 0.38);
+    }
+    100% {
+        box-shadow: 0 8px 18px rgba(245, 158, 11, 0.26);
+    }
+}
+
+@keyframes buttonFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-2px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .affiliate-banner,
+    .affiliate-banner-inner,
+    .affiliate-tag,
+    .affiliate-media-frame::before,
+    .affiliate-banner-image,
+    .affiliate-btn {
+        animation: none;
+    }
 }
 
 /* ==========================================================================
@@ -824,10 +904,11 @@ p {
 
     .affiliate-banner-inner {
         grid-template-columns: 1fr;
+        gap: 12px;
     }
 
     .affiliate-banner-copy {
-        padding: 10px 10px 0;
+        padding: 4px 6px 0;
     }
 
     .affiliate-banner-media {
@@ -835,7 +916,7 @@ p {
     }
 
     .affiliate-media-frame {
-        width: min(100%, 520px);
+        width: min(100%, 320px);
     }
 
     .affiliate-btn {
@@ -876,20 +957,24 @@ p {
 @media (max-width: 768px) {
     .affiliate-banner {
         margin-top: 78px;
-        padding: 12px 0 0;
+        padding: 8px 0 0;
     }
 
     .affiliate-banner-inner {
-        padding: 12px;
-        gap: 18px;
+        padding: 10px 12px;
+        gap: 10px;
     }
 
     .affiliate-banner-copy {
-        padding: 6px 4px 0;
+        padding: 2px 4px 0;
+    }
+
+    .affiliate-banner-media {
+        display: none;
     }
 
     .affiliate-banner-image {
-        max-height: 320px;
+        max-height: 200px;
     }
 
     .nav-links, .nav-btn {
