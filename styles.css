@@ -164,7 +164,7 @@ p {
 .affiliate-banner-inner {
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
-    align-items: center;
+    align-items: start;
     gap: 24px;
     padding: 18px;
     border-radius: var(--border-radius-lg);
@@ -177,6 +177,7 @@ p {
 .affiliate-banner-copy {
     max-width: 760px;
     padding: 10px 8px 10px 10px;
+    min-width: 0;
 }
 
 .affiliate-tag {
@@ -197,6 +198,7 @@ p {
 .affiliate-banner h2 {
     margin-bottom: 8px;
     font-size: clamp(1.4rem, 2.5vw, 2rem);
+    line-height: 1.08;
 }
 
 .affiliate-banner p {
@@ -209,11 +211,15 @@ p {
     justify-content: center;
     align-items: center;
     min-height: 240px;
+    min-width: 0;
 }
 
 .affiliate-media-frame {
     position: relative;
     width: min(100%, 420px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 16px;
     border-radius: 28px;
     background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(255, 244, 214, 0.9));
@@ -240,9 +246,10 @@ p {
 .affiliate-banner-image {
     display: block;
     width: 100%;
+    max-height: 420px;
     height: auto;
     border-radius: 20px;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .affiliate-btn {
@@ -828,7 +835,7 @@ p {
     }
 
     .affiliate-media-frame {
-        width: 100%;
+        width: min(100%, 520px);
     }
 
     .affiliate-btn {
@@ -879,6 +886,10 @@ p {
 
     .affiliate-banner-copy {
         padding: 6px 4px 0;
+    }
+
+    .affiliate-banner-image {
+        max-height: 320px;
     }
 
     .nav-links, .nav-btn {
